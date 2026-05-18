@@ -1,0 +1,24 @@
+.my-orders { padding: 30px; max-width: 900px; margin: 0 auto; }
+.my-orders h2 { color: tomato; margin-bottom: 20px; }
+.order-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.order-items p { margin: 5px 0; font-size: 14px; }
+.order-status { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.order-status button {
+  background: tomato;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}

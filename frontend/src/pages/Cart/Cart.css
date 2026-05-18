@@ -1,0 +1,246 @@
+
+/* CART */
+.cart{
+  width: 100%;
+  padding: 40px 8%;
+}
+
+/* HEADER */
+.cart-items-title{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  padding: 10px 0;
+}
+
+/* ITEM ROW */
+.cart-items-item{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* IMAGE */
+.cart-items-item img{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* TEXT */
+.cart-items-item p{
+  margin: 0;
+  font-size: 15px;
+  color: #444;
+}
+
+/* REMOVE */
+.cart-items-item p:last-child{
+  color: tomato;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* LINE */
+.cart hr{
+  margin: 20px 0;
+  border: none;
+  height: 1px;
+  background: #ddd;
+}
+
+/* ================= MOBILE FIX (IMPROVED) ================= */
+@media (max-width: 768px){
+
+  .cart{
+    padding: 15px 4%;
+  }
+
+  .cart-items-title{
+    display: none;
+  }
+
+  .cart-items-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px;
+    margin-bottom: 12px;
+
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  }
+
+  /* SMALL IMAGE (NOT FULL WIDTH) */
+  .cart-items-item img{
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+  }
+
+  /* TEXT COMPACT */
+  .cart-items-item p{
+    font-size: 12px;
+    flex: 1;
+  }
+
+  /* REMOVE BUTTON SMALL */
+  .cart-items-item p:last-child{
+    font-size: 16px;
+    flex: none;
+    color: tomato;
+  }
+}
+
+/* ================= CART BOTTOM ================= */
+.cart-bottom{
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+/* ================= CART TOTAL ================= */
+.cart-total{
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.cart-total h2{
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.cart-total-details{
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+.cart-total hr{
+  border: none;
+  height: 1px;
+  background: #eee;
+  margin: 10px 0;
+}
+
+/* CHECKOUT BUTTON */
+.cart-total button{
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: tomato;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart-total button:hover{
+  background: #e63b1f;
+  transform: scale(1.02);
+}
+
+/* ================= PROMO CODE ================= */
+.cart-promocode{
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.cart-promocode p{
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* INPUT AREA */
+.cart-promocode-input{
+  display: flex;
+  gap: 10px;
+}
+
+.cart-promocode-input input{
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.cart-promocode-input input:focus{
+  border-color: tomato;
+}
+
+/* BUTTON */
+.cart-promocode-input button{
+  padding: 10px 15px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart-promocode-input button:hover{
+  background: #333;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px){
+
+  .cart-bottom{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cart-total,
+  .cart-promocode{
+    min-width: 100%;
+    padding: 18px;
+  }
+
+  .cart-total h2{
+    font-size: 18px;
+  }
+
+  .cart-total-details{
+    font-size: 14px;
+  }
+
+  .cart-total button{
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .cart-promocode-input{
+    flex-direction: column;
+  }
+
+  .cart-promocode-input button{
+    width: 100%;
+  }
+}

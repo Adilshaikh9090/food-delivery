@@ -1,0 +1,146 @@
+.app-download{
+    margin: 100px auto;
+    padding: 60px 8%;
+    background: #fff4f2;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0px 6px 25px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.app-download::before{
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: rgba(255,99,71,0.08);
+    border-radius: 50%;
+    top: -80px;
+    right: -80px;
+}
+
+.app-download::after{
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255,99,71,0.05);
+    border-radius: 50%;
+    bottom: -70px;
+    left: -70px;
+}
+
+.app-download p{
+    font-size: max(2.8vw,28px);
+    font-weight: 700;
+    color: #262626;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.app-download p span{
+    color: tomato;
+}
+
+.app-download-platforms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.app-download-platforms img{
+    width: max(12vw,140px);
+    max-width: 180px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.app-download-platforms img:hover{
+    transform: scale(1.08);
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px){
+
+    .app-download{
+        padding: 50px 30px;
+    }
+
+    .app-download p{
+        font-size: 24px;
+    }
+
+    .app-download-platforms img{
+        width: 140px;
+    }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 750px){
+
+    .app-download{
+        margin: 70px auto;
+        padding: 40px 18px;
+        border-radius: 18px;
+    }
+
+    .app-download::before{
+        width: 160px;
+        height: 160px;
+        top: -60px;
+        right: -60px;
+    }
+
+    .app-download::after{
+        width: 130px;
+        height: 130px;
+        bottom: -50px;
+        left: -50px;
+    }
+
+    .app-download p{
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    .app-download-platforms{
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .app-download-platforms img{
+        width: 120px;
+    }
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width: 500px){
+
+    .app-download{
+        padding: 35px 15px;
+        border-radius: 16px;
+    }
+
+    .app-download p{
+        font-size: 18px;
+    }
+
+    .app-download-platforms{
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .app-download-platforms img{
+        width: 115px;
+    }
+}

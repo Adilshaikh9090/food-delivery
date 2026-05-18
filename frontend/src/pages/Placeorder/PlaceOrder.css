@@ -1,0 +1,138 @@
+.place-order {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 50px 8%;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.place-order-left {
+  flex: 1;
+  min-width: 320px;
+}
+
+.place-order-left .title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* INPUTS */
+.place-order-left input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+/* MULTI FIELDS */
+.multi-fields {
+  display: flex;
+  gap: 12px;
+}
+
+.multi-fields input {
+  flex: 1;
+}
+
+/* RIGHT SIDE */
+.place-order-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* CART TOTAL BOX */
+.cart-total {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.cart-total h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* TOTAL ROWS */
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.cart-total hr {
+  border: none;
+  height: 1px;
+  background: #eee;
+}
+
+/* BUTTON */
+.cart-total button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: tomato;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .place-order {
+    flex-direction: column;
+    padding: 20px 15px;
+    gap: 25px;
+  }
+
+  .place-order-left,
+  .place-order-right {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .place-order-left .title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .multi-fields {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* 🔥 SMALL INPUTS FOR MOBILE */
+  .place-order-left input {
+    font-size: 12px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+  }
+
+  .cart-total {
+    padding: 16px;
+  }
+
+  .cart-total h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .cart-total-details {
+    font-size: 13px;
+  }
+
+  .cart-total button {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

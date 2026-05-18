@@ -1,0 +1,152 @@
+/* BACKGROUND OVERLAY */
+.login-popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* CONTAINER */
+.login-popup-container{
+  width: 90%;
+  max-width: 400px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+/* TITLE */
+.login-popup-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-popup-title h2{
+  font-size: 24px;
+  color: #333;
+}
+
+.login-popup-title img{
+  width: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-popup-title img:hover{
+  transform: scale(1.2);
+}
+
+/* INPUTS */
+.login-popup-inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-popup-inputs input{
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.login-popup-inputs input:focus{
+  border-color: tomato;
+}
+
+/* BUTTON */
+.login-popup-container button{
+  padding: 12px;
+  border: none;
+  background: tomato;
+  color: white;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-popup-container button:hover{
+  background: #e63b1f;
+}
+
+/* CONDITION */
+.login-popup-condition{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: #555;
+}
+
+.login-popup-condition input{
+  margin-top: 3px;
+}
+
+/* SWITCH TEXT */
+.login-popup-container p{
+  font-size: 13px;
+  text-align: center;
+  color: #555;
+}
+
+.login-popup-container span{
+  color: tomato;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+  from{
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 500px){
+
+  .login-popup-container{
+    width: 92%;
+    padding: 20px;
+    border-radius: 14px;
+    gap: 14px;
+  }
+
+  .login-popup-title h2{
+    font-size: 20px;
+  }
+
+  .login-popup-inputs input{
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .login-popup-container button{
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .login-popup-container p{
+    font-size: 12px;
+  }
+}
