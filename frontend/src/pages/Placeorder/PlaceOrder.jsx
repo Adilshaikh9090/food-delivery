@@ -35,7 +35,7 @@ const Placeorder = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/order/place', orderData, {
+      const res = await axios.post('https://food-delivery-backend-qpx8.onrender.com/api/order/place', orderData, {
         headers: { token }
       })
       if (res.data.success) {

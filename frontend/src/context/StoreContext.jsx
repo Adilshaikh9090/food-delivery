@@ -4,18 +4,25 @@ import axios from 'axios';
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState({});
+  const [cartItems, setCartItems] = useState(() => {
+    const saved = localStorage.getItem('cartItems')
+    return saved ? JSON.parse(saved) : {}
+  });
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [food_list, setFoodList] = useState([]);
 
   const fetchFoodList = async () => {
-    const res = await axios.get('http://10.173.239.142:5000/api/food/list');
+    const res = await axios.get('https://food-delivery-backend-qpx8.onrender.com/api/food/list');
     if (res.data.success) setFoodList(res.data.data);
   }
 
   useEffect(() => {
     fetchFoodList();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  }, [cartItems]);
 
   const addToCart = (itemId) => {
     setCartItems((prev) => ({
@@ -52,6 +59,8 @@ const StoreContextProvider = ({ children }) => {
   const logout = () => {
     setToken('')
     localStorage.removeItem('token')
+    localStorage.removeItem('cartItems')
+    setCartItems({})
   }
 
   const contextValue = {

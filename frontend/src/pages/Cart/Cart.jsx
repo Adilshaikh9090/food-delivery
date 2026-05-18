@@ -25,7 +25,7 @@ const Cart = () => {
           if (qty > 0) {
             return (
               <div key={item._id} className='cart-items-title cart-items-item'>
-                <img src={`http://10.173.239.142:5000/images/${food.image}`}alt="" />
+                <img src={`https://food-delivery-backend-qpx8.onrender.com/images/${food.image}`}alt="" />
                 <p>{item.name}</p>
                 <p>₹{item.price}</p>
                 <p>{qty}</p>

@@ -9,7 +9,7 @@ const MyOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get('http://10.173.239.142:5000/api/order/userorders', {
+      const res = await axios.get('https://food-delivery-backend-qpx8.onrender.com/api/order/userorders', {
         headers: { token }
       })
       if (res.data.success) setOrders(res.data.data)

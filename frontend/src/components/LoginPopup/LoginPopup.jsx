@@ -19,8 +19,8 @@ const LoginPopup = ({ setShowLogin }) => {
     setError('')
     try {
       let url = currState === 'Login'
-        ? 'http://localhost:5000/api/user/login'
-        : 'http://localhost:5000/api/user/register'
+       ? 'https://food-delivery-backend-qpx8.onrender.com/api/user/login'
+: 'https://food-delivery-backend-qpx8.onrender.com/api/user/register'
 
       const res = await axios.post(url, data)
       if (res.data.success) {
