@@ -160,3 +160,38 @@
         transform: translateY(-3px); /* Vertical lift on mobile instead of horizontal shift */
     }
 }
+.avg-rating {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff9800;
+  background: #fff8e1;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+.review-box {
+  margin-top: 10px;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+.star-rating { display: flex; gap: 4px; margin-bottom: 8px; }
+.review-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 8px;
+  resize: none;
+  height: 60px;
+}
+.review-btn {
+  background: tomato;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
