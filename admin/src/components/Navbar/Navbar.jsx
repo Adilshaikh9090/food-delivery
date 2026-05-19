@@ -1,12 +1,18 @@
 import React from 'react'
 import './Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ handleLogout }) => {
   return (
-    <div className='navbar'>
-      <h2 className='logo'>🍔 Food Admin</h2>
-      <p>Admin Panel</p>
-    </div>
+    <nav className='admin-navbar'>
+      <div className='navbar-brand'>
+        <span className='brand-icon'>🍔</span>
+        <span className='brand-name'>Tomato Admin</span>
+      </div>
+      <button onClick={handleLogout} className='logout-btn'>
+        <span>Logout</span>
+        <span>→</span>
+      </button>
+    </nav>
   )
 }
 

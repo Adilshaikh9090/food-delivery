@@ -1,20 +1,6 @@
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  min-height: 100vh;
-  border-right: 1px solid #eee;
-  width: 200px;
-}
-.sidebar-item {
-  padding: 10px 15px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #333;
-  font-size: 15px;
-}
-.sidebar-item.active {
-  background-color: tomato;
-  color: white;
-}
+.admin-sidebar { width: 220px; background: #1a1a1a; border-right: 1px solid #2e2e2e; padding: 24px 12px; display: flex; flex-direction: column; gap: 4px; min-height: calc(100vh - 57px); }
+.sidebar-link { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; text-decoration: none; color: #888; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+.sidebar-link:hover { background: #222; color: #f0f0f0; }
+.sidebar-link.active { background: #ff4d2e; color: white; }
+.link-icon { font-size: 18px; }
+@media (max-width: 768px) { .admin-sidebar { width: 60px; padding: 16px 8px; } .link-text { display: none; } .sidebar-link { justify-content: center; padding: 12px; } }

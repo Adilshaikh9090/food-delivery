@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom'
 const Placeorder = () => {
   const { getTotalCartAmount, token, food_list, cartItems, setCartItems } = useContext(StoreContext)
   const navigate = useNavigate()
+  const [paymentMethod, setPaymentMethod] = useState('cod')
+  const [showSuccess, setShowSuccess] = useState(false)
 
   const [data, setData] = useState({
     firstName: '', lastName: '', email: '',
@@ -40,8 +42,12 @@ const Placeorder = () => {
       })
       if (res.data.success) {
         setCartItems({})
-        alert('✅ Order placed successfully!')
-        navigate('/')
+       setShowSuccess(true)
+setTimeout(() => {
+  setShowSuccess(false)
+  setCartItems({})
+  navigate('/')
+}, 3000)
       } else {
         alert('❌ Failed to place order')
       }
@@ -52,6 +58,17 @@ const Placeorder = () => {
 
   return (
     <form className='place-order' onSubmit={placeOrder}>
+      {showSuccess && (
+  <div className='order-success-overlay'>
+    <div className='order-success-card'>
+      <div className='success-icon'>🎉</div>
+      <h2>Order Placed!</h2>
+      <p>Your delicious food is being prepared.</p>
+      <p className='success-sub'>We'll deliver it to you soon! 🚀</p>
+      <div className='success-progress'></div>
+    </div>
+  </div>
+)}
       <div className="place-order-left">
         <p className="title">Delivery Information</p>
         <div className="multi-fields">
@@ -89,7 +106,33 @@ const Placeorder = () => {
               <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
-          <button type="submit">PROCEED TO PAYMENT</button>
+
+          {/* Payment Method */}
+          <p style={{ fontWeight: '600', margin: '16px 0 10px' }}>Payment Method:</p>
+          <div className='payment-options'>
+            <label className={`payment-option ${paymentMethod === 'cod' ? 'selected' : ''}`}>
+              <input
+                type='radio'
+                name='payment'
+                value='cod'
+                checked={paymentMethod === 'cod'}
+                onChange={() => setPaymentMethod('cod')}
+              />
+              💵 Cash on Delivery
+            </label>
+            <label
+              className='payment-option disabled'
+              onClick={() => alert('🚫 Online payment is not available at this time!')}
+            >
+              <input type='radio' name='payment' value='online' disabled />
+              💳 Online Payment
+              <span className='not-available'>Not Available</span>
+            </label>
+          </div>
+
+          <button type="submit">
+            💵 PLACE ORDER
+          </button>
         </div>
       </div>
     </form>

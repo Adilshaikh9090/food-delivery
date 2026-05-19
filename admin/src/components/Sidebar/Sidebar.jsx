@@ -4,11 +4,20 @@ import './Sidebar.css'
 
 const Sidebar = () => {
   return (
-    <div className='sidebar'>
-      <NavLink to='/add' className='sidebar-item'>➕ Add Items</NavLink>
-      <NavLink to='/list' className='sidebar-item'>📋 List Items</NavLink>
-      <NavLink to='/orders' className='sidebar-item'>📦 Orders</NavLink>
-    </div>
+    <aside className='admin-sidebar'>
+      <NavLink to='/add' className={({isActive}) => `sidebar-link ${isActive ? 'active' : ''}`}>
+        <span className='link-icon'>➕</span>
+        <span className='link-text'>Add Food</span>
+      </NavLink>
+      <NavLink to='/list' className={({isActive}) => `sidebar-link ${isActive ? 'active' : ''}`}>
+        <span className='link-icon'>📋</span>
+        <span className='link-text'>Food List</span>
+      </NavLink>
+      <NavLink to='/orders' className={({isActive}) => `sidebar-link ${isActive ? 'active' : ''}`}>
+        <span className='link-icon'>📦</span>
+        <span className='link-text'>Orders</span>
+      </NavLink>
+    </aside>
   )
 }
 

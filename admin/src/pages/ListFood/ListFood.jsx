@@ -6,42 +6,38 @@ const ListFood = () => {
   const [foods, setFoods] = useState([])
 
   const fetchFoods = async () => {
-    const res = await axios.get('http://localhost:5000/api/food/list')
+    const res = await axios.get('https://food-delivery-backend-qpx8.onrender.com/api/food/list')
     if (res.data.success) setFoods(res.data.data)
   }
 
   const removeFood = async (id) => {
-    await axios.post('http://localhost:5000/api/food/remove', { id })
-    fetchFoods()
+    if (window.confirm('Remove this item?')) {
+      await axios.post('https://food-delivery-backend-qpx8.onrender.com/api/food/remove', { id })
+      fetchFoods()
+    }
   }
 
   useEffect(() => { fetchFoods() }, [])
 
   return (
-    <div className='list-food'>
-      <h2>All Food Items</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {foods.map((food) => (
-            <tr key={food._id}>
-              <td><img src={`http://localhost:5000/images/${food.image}`} alt={food.name} /></td>
-              <td>{food.name}</td>
-              <td>{food.category}</td>
-              <td>${food.price}</td>
-              <td><button onClick={() => removeFood(food._id)}>❌ Remove</button></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className='list-page'>
+      <div className='page-header'>
+        <h1>Food List</h1>
+        <p>{foods.length} items on menu</p>
+      </div>
+      <div className='food-grid'>
+        {foods.map((food) => (
+          <div key={food._id} className='food-card'>
+            <img src={food.image} alt={food.name} />
+            <div className='food-card-info'>
+              <span className='food-category'>{food.category}</span>
+              <h3>{food.name}</h3>
+              <p className='food-price'>₹{food.price}</p>
+            </div>
+            <button onClick={() => removeFood(food._id)} className='delete-btn'>🗑️</button>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
